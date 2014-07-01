@@ -37,7 +37,7 @@ module.exports = function (grunt) {
             },
             jade: {
                 files: ['<%= config.app %>/{,*/}*.jade', './resume.yaml'],
-                tasks: ['jade']
+                tasks: ['jade:serve']
             },
             js: {
                 files: ['<%= config.app %>/scripts/{,*/}*.js'],
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
             },
             coffee: {
               files: ['<%= config.app %>/scripts/{,*}*.coffee'],
-              tasks: ['coffee'],
+              tasks: ['coffee:serve'],
             },
             jstest: {
                 files: ['test/spec/{,*/}*.js'],
@@ -168,7 +168,16 @@ module.exports = function (grunt) {
             files: [{
               expand: true,
               cwd: '<%= config.app %>/scripts',
-              dest: '.tmp/scripts',
+              dest: '<%= config.dist %>/scripts',
+              src: '*.coffee',
+              ext: '.js'
+            }]
+          },
+          serve: {
+            files: [{
+              expand: true,
+              cwd: '<%= config.app %>/scripts',
+              dest: '<%= config.tmp %>/scripts',
               src: '*.coffee',
               ext: '.js'
             }]
@@ -440,7 +449,7 @@ module.exports = function (grunt) {
             'autoprefixer',
             'connect:livereload',
             'jade:serve',
-            'coffee',
+            'coffee:serve',
             'watch'
         ]);
     });
@@ -475,7 +484,7 @@ module.exports = function (grunt) {
         'svgmin',
         'autoprefixer',
         'jade:dist',
-        'coffee',
+        'coffee:dist',
         // 'concat',
         // 'cssmin',
         // 'uglify',
