@@ -85,7 +85,7 @@ module.exports = function (grunt) {
                 open: true,
                 livereload: 35729,
                 // Change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
+                hostname: '0.0.0.0'
             },
             livereload: {
                 options: {
@@ -322,7 +322,7 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     collapseBooleanAttributes: true,
-                    collapseWhitespace: true,
+                    // collapseWhitespace: true,
                     removeAttributeQuotes: true,
                     removeCommentsFromCDATA: true,
                     removeEmptyAttributes: true,
@@ -493,7 +493,7 @@ module.exports = function (grunt) {
         'modernizr',
         'rev',
         'usemin',
-        // 'htmlmin'
+        'htmlmin'
     ]);
 
     grunt.registerTask('default', [
