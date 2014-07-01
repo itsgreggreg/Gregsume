@@ -20,7 +20,8 @@ module.exports = function (grunt) {
     // Configurable paths
     var config = {
         app: 'app',
-        dist: 'dist'
+        dist: 'dist',
+        tmp: '.tmp'
     };
 
     // Define the configuration for all the tasks
@@ -136,6 +137,19 @@ module.exports = function (grunt) {
 
         jade: {
             dist: {
+                options: {
+                    pretty: true,
+                    data: yaml.safeLoad(grunt.file.read('resume.yaml'))
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= config.app %>',
+                    dest: '<%= config.dist %>',
+                    src: '*.jade',
+                    ext: '.html'
+                }]
+            },
+            serve: {
                 options: {
                     pretty: true,
                     data: yaml.safeLoad(grunt.file.read('resume.yaml'))
@@ -309,7 +323,7 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: '.tmp',
+                    cwd: '<%= config.dist %>',
                     src: '{,*/}*.html',
                     dest: '<%= config.dist %>'
                 }]
@@ -358,6 +372,17 @@ module.exports = function (grunt) {
                         'styles/fonts/{,*/}*.*'
                     ]
                 }]
+            },
+            dist_styles:{
+              files: [{
+                expand: true,
+                dot: true,
+                cwd: '<%= config.tmp %>',
+                dest: '<%= config.dist %>',
+                src: [
+                  'styles/*.css'
+                  ]
+              }]
             },
             styles: {
                 expand: true,
@@ -414,7 +439,7 @@ module.exports = function (grunt) {
             'concurrent:server',
             'autoprefixer',
             'connect:livereload',
-            'jade',
+            'jade:serve',
             'coffee',
             'watch'
         ]);
@@ -443,18 +468,23 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
-        'concurrent:dist',
+        // 'concurrent:dist',
+        'sass:dist',
+        'copy:styles',
+        'imagemin',
+        'svgmin',
         'autoprefixer',
-        'jade',
+        'jade:dist',
         'coffee',
-        'concat',
-        'cssmin',
-        'uglify',
+        // 'concat',
+        // 'cssmin',
+        // 'uglify',
         'copy:dist',
+        'copy:dist_styles',
         'modernizr',
         'rev',
         'usemin',
-        'htmlmin'
+        // 'htmlmin'
     ]);
 
     grunt.registerTask('default', [
