@@ -15,7 +15,8 @@ resume:
       title: WHO
       description:
         A Computer Programmer by trade, Graphic Designer by education, Guitar Player and Photographer by night and a Pickle Enthusiast
-        as time allows. I work primarily in <div class="tag">Ruby</div> and <div class="tag">Javascript</div> with a thirst for <div class="tag">ClojureScript</div> projects and I used to write a whole lot of <div class="tag">Actionscript</div>.
+        as time allows. I work primarily in <div class="tag">Ruby</div> and <div class="tag">Javascript</div> with a thirst for
+        <div class="tag">ClojureScript</div> projects and I used to write a whole lot of <div class="tag">Actionscript</div>.
     experience:
       title: EXPERIENCE
       jobs:
