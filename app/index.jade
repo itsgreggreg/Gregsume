@@ -30,7 +30,7 @@ html
     .main-column
       #identity
         #icon
-          img(src="/images/cycle.png")
+          img(src="images/cycle.png")
         h1#name= resume.identity.name
         #tagline
           = resume.identity.tagline
@@ -60,7 +60,7 @@ html
                 - if(job.website)
                   a.employer(href=job.website[0])
                     = job.employer
-                    img.external-link(src="/images/external-link.png")
+                    img.external-link(src="images/external-link.png")
                 - else
                   .employer
                     = job.employer
@@ -95,7 +95,7 @@ html
           .project-icons
             - for project in section.projects
               a.project-icon(href=project.url, alt=project.title)
-                - var project_icon = "/images/"+project.icon
+                - var project_icon = "images/"+project.icon
                 img(src=project_icon)
 
     // build:js scripts/vendor.js
