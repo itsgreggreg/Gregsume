@@ -8,6 +8,9 @@ resume:
         title: github
         url: http://github.com/itsgreggreg
       -
+        title: stackoverflow
+        url: http://stackoverflow.com/users/183380/greggreg
+      -
         title: flickr
         url: http://flickr.com/milkish
   sections:
@@ -37,6 +40,8 @@ resume:
             - Javascript
             - Clojure
             - Unix
+            - Cordova
+            - Mobile
             - Photography
             - Prototyping
         -
@@ -53,6 +58,8 @@ resume:
           tags:
             - Ruby
             - Javascript
+            - PhoneGap
+            - SenchaTouch
             - Mobile
             - HTML
         -
