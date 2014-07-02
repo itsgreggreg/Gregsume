@@ -15,8 +15,8 @@ resume:
       title: WHO
       description:
         A Computer Programmer by trade, Graphic Designer by education, Guitar Player and Photographer by night and a Pickle Enthusiast
-        as time allows. I work primarily in <div class="tag">Ruby</div> and <div class="tag">Javascript</div> with a thirst for
-        <div class="tag">ClojureScript</div> projects and I used to write a whole lot of <div class="tag">Actionscript</div>.
+        as time allows. I work primarily in <div class="tag">Ruby</div> and <div class="tag">Javascript</div>, pick up
+        <div class="tag">ClojureScript</div> projects whenever I can and I used to write a whole lot of <div class="tag">Actionscript</div>.
     experience:
       title: EXPERIENCE
       jobs:
@@ -31,7 +31,7 @@ resume:
             such as PaperlessPost.com but mainly work on personal startup and creative endeavors like building photobooths or visualizing income levels.
             I also do the occasional logo or illustration commission as my Graphic Design degree haunts me.
             Currently I find myself elbows deep making the world of postcard organization better through technology over at HowdyHi.com.
-            I realize it makes very little sense, but start sending postcards... you'll get it. :)
+            # I realize it makes very little sense, but start sending postcards... you'll get it. :)
           tags:
             - Ruby
             - Javascript
