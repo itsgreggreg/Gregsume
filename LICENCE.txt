@@ -1,0 +1,4 @@
+kindajean.png - CC BY-SA 3.0 - Subtle Patterns © Atle Mo. http://subtlepatterns.com
+csun_seal.png - © California State University Northridge http://www.csun.edu
+
+All other code and assets are BSD Licenced - http://opensource.org/licenses/bsd-license.php
