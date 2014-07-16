@@ -30,12 +30,9 @@ html
     <![endif]-->
     #main-column
       #identity
-        #icon
-          img(src="images/cycle.png")
         h1#name= resume.identity.name
         #tagline
           = resume.identity.tagline
-          .sup &#0153
         #subtag= resume.identity.subtag
         #links
           - for link in resume.identity.links
@@ -92,19 +89,8 @@ html
               br
               .employer= school.degree
             .description
-              - if(school.name.trim() === "California State University Northridge")
-                img.logo(src= "images/csun_seal.png")
               .middot &middot;
               != school.description
-      .section
-        - section = resume.sections.extra
-        h2.section-title= section.title
-        .contents
-          .project-icons
-            - for project in section.projects
-              a.project-icon(href=project.url, alt=project.title)
-                - var project_icon = "images/"+project.icon
-                img(src=project_icon)
 
     // build:js scripts/vendor.js
     // bower:js

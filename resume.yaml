@@ -1,202 +1,45 @@
 resume:
   identity:
-    name: Greg Baraghimian
-    tagline: I Program Computers.
-    subtag: And do some other stuff too.
+    name: Your Name Here
+    tagline: Why You're Awesome
     links:
       -
         title: github
-        url: http://github.com/itsgreggreg
+        url: http://github.com/
       -
         title: stackoverflow
-        url: http://stackoverflow.com/users/183380/greggreg
-      -
-        title: flickr
-        url: http://flickr.com/milkish
+        url: http://stackoverflow.com/
   sections:
     expertise:
       title: WHO
       description:
-        A Computer Programmer by trade, Graphic Designer by education, Guitar Player and Photographer by night and a Pickle Enthusiast
-        as time allows. I work primarily in Ruby and Javascript, pick up
-        ClojureScript projects whenever I can and I used to write a whole lot of Actionscript.
+        The Super awesome things that make you so super awesome.
 
     skills:
       title: SKILLS
       tags:
-        - Ruby
-        - Rails
-        - Javascript
-        - Coffeescript
-        - Node
-        - Grunt
-        - Bower
-        - Git
-        - Html
-        - CSS
-        - HAML
-        - SASS
-        - VIM
-        - Agile Dev Practices
-        - Adobe Products
-        - Graphic Design
-        - Typography
-
+        - Scrumtastic
+        - HTML5
+        - Mobile Ready
 
 
     experience:
       title: EXPERIENCE
       jobs:
         -
-          employer: Alpha-Mouse
+          employer: An Employer
           website:
             - http://alpha-mouse.com
-            - Alpha-Mouse.com
-          title: Founder and Lead Developer
-          dates: October 2013 - Present
-          description: Alpha-Mouse is my ever-ongoing consulting and creative agency. Through Alpha-Mouse I've done consulting for various companies
-            such as PaperlessPost.com but mainly work on personal startup and creative endeavors like building photobooths or visualizing income levels.
-            I also do the occasional logo or illustration commission as my Graphic Design degree haunts me.
-            Currently I find myself elbows deep making the world of postcard organization better through technology over at HowdyHi.com.
-            # I realize it makes very little sense, but start sending postcards... you'll get it. :)
+          title: Your Job Title
+          description: What you did for this company.
           tags:
             - Ruby
             - Javascript
-            - Clojure
-            - Unix
-            - Cordova
-            - Mobile
-            - Photography
-            - Prototyping
-        -
-          employer: Spicy Tuna Labs
-          website:
-            - http://spicy.io
-            - Spicy.io
-          title: Co-Founder and Co-Lead Developer
-          dates: May 2012 - March 2013
-          description: I Co-Founded a consulting business in NYC where we focused on building prototypes and minimum viable products for
-            startups. We built many mobile applications, web applications and API layers for clients ranging from social video sharing community myblocknyc.com
-            to a mobile based micro site creator for business owners. Within a year of operations we had created a profitable and successful
-            consulting operation in New York City.
-          tags:
-            - Ruby
-            - Javascript
-            - PhoneGap
-            - SenchaTouch
-            - Mobile
             - HTML
-        -
-          employer: K2 Media Labs
-          website:
-            - http://k2medialabs.com
-            - K2medialabs.com
-          title: Senior Developer
-          dates: May 2011 - January 2012
-          description: At K2 Media Labs I was many different roles to many different teams. Working at an incubator saw me writing a 3D music explorer in 
-            Actionscript 3, building the front end of a daily deals website in Google Web Toolkit, writing the backend of an image sharing social media website
-            in Ruby and contributing various bugfixes and updates to a social discovery "who's around me" type mobile app. Being a collection of startups that
-            didn't succeed I've got very little to show for it other than stories of super late nights with other coworkers. :( But such is life in the NYC start up world!
-          tags:
-            - Ruby
-            - Javascript
-            - Actionscript 3
-            - Python
-            - Prototyping
-            - GWT
-        -
-          employer: Lime Wire
-          website:
-            - http://limewire.com
-            - LimeWire.com
-          title: India Team Liaison and Webstore Developer
-          dates: October 2009 - November 2010
-          description: When Lime Wire needed to kick their outsourcing into overdrive for the rapid development of a new music service
-            I leapt at the opportunity to be the India team liaison and dev lead. In this role I facilitated effective communication between
-            multiple teams thousands of miles apart, identified inefficiencies in outsourcing strategies, maintained clear understanding of
-            team goals and expectations and managed the delivery of software from a team overseas on a strict deadline. This job saw me make
-            a 3 week trip to New Delhi to meet and code with the team as well as eat some of the best food I've ever had.
-            This was probably the most fun I've had at work and I miss those guys.
-          tags:
-            - Javascript
-            - Scrum
-            - Outsourcing
-            - Dev Lead
-            - Indian Food
-        -
-          employer: Lime Wire
-          website:
-            - http://limewire.com
-            - LimeWire.com
-          title: Informations Systems Interface Developer
-          dates: October 2009 - November 2010
-          description: I was brought into Lime Wire to write an analytics dashboard and set of visualizations for the massive amount
-            of data they were bringing in. I wrote an Adobe Flex based application capable of loading in configurable analytics modules
-            that tied in with the companies identity server to allow employees to securely log in and save dashboard configurations. When Lime Wire
-            kickstarted work on what would be an online music purchasing and streaming service, I was called upon to construct prototypes
-            in Adobe Air as well as QT and was put on the fledgling team of core developers for the new project. We were tasked with creating
-            the brand new music service's minimum viable product and for this project I was both scrum master and lead QT developer.
-          tags:
-            - Actionscript 3
-            - Flex
-            - Javascript
-            - Prototyping
-            - Scrum
-        -
-          employer: Adroit Interactive
-          title: Lead Actionscript Developer
-          dates: November 2008 - January 2009
-          description:
-            My employment at Adroit Interactive saw me re-write their realtime, targeted ad delivery system in Actionscript 2.
-            Working in the confines of "As small as possible" and "As compatible as possible" I built a servable ad unit capable
-            of on the fly scripting of images, components, actionables, fonts, and a whole bunch of other things. I rode my Puch
-            to work every day.
-          tags:
-            - Actionscript 2
-            - Worked in a Closet
-        -
-          employer: Our Stage
-          website:
-            - http://ourstage.com
-            - OurStage.com
-          title: Junior Developer
-          description:
-            I was brought onto Our Stage as a Junior Developer to build various components in Actionscript 3.
-            I build a real time DJ multicasting app, updated and maintained their chat application, and contributed
-            various features and bug fixes to the main webapp in Ruby. I also bough my first two wheeled motor vehicle from a coworker there.
-            It was a red &#39;78 Puch Maxi.
-          dates: April 2008 - October 2008
-          tags:
-            - Actionscript 3
-            - Ruby
-            - Prototyping
     education:
       title: FORMAL EDUCATION
       schools:
         -
-          name: California State University Northridge
-          degree: Bachelor of Arts in Graphic Design
-          description:
-            I spent 4 years learning how to effectively lay type and graphics onto page and package. By the end of my sojourn in accredited education
-            I discovered that I not only wanted to visually organize websites, but that programming them was more personally rewarding. Here I stand
-            a computer developer with an Art degree.
-    extra:
-      title: EXTRA
-      projects:
-        -
-          title: Count My Stack
-          url: http://countmystack.com
-          icon: count-my-stack-icon.png
-        -
-          title: Slightly Cold
-          url: http://slightlycold.com
-          icon: slightly-cold-icon.png
-        -
-          title: Flickr
-          url: http://flickr.com/milkish
-          icon: flickr-icon.png
-
-    enjoyment:
-      title: Enjoyment
-  notes:
-    This resume crafted in Vim, using Yeoman, Jade, Grunt, NPM, YAML, and Coffeescript. Yay for abstraction and automation.
+          name: School Name
+          degree: Degree name
+          description: Description of your time at said school
