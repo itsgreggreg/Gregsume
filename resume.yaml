@@ -54,10 +54,7 @@ resume:
             - Alpha-Mouse.com
           title: Founder and Lead Developer
           dates: October 2013 - Present
-          description: Alpha-Mouse is my ever-ongoing consulting and creative agency. Through Alpha-Mouse I've done consulting for various companies
-            such as PaperlessPost.com but mainly work on personal startup and creative endeavors like building photobooths or visualizing income levels.
-            I also do the occasional logo or illustration commission as my Graphic Design degree haunts me.
-            Currently I find myself elbows deep making the world of postcard organization better through technology over at HowdyHi.com.
+          description: I founded Alpha-Mouse as an exprimental digital creative agency. At Alpha-Mouse we do everything from web consulting to photobooths and digital installations. Currently we are keeping busy creating network and management tool for people who like to send postcards. Check out the dev process over at HowdyHi.com
             # I realize it makes very little sense, but start sending postcards... you'll get it. :)
           tags:
             - Ruby
