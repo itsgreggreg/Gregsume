@@ -48,6 +48,13 @@ html
         .contents
           .description!= section.description
 
+      .section.skills
+        - section = resume.sections.skills
+        h2.section-title= section.title
+        .contents.tags
+          - for tag in section.tags
+            .tag= tag
+
       .section
         - section = resume.sections.experience
         h2.section-title= section.title
