@@ -16,10 +16,8 @@ html
     //      88       `Y8888P"Y8888P'"Y888P'"Y88P"Y8888P"    
     //                                                      
     meta(name='description', content='')
-    // meta(name='viewport', content='width=device-width')
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel='shortcut icon', href='favicon.ico')
-    // Place favicon.ico and apple-touch-icon.png in the root directory
     // build:css styles/vendor.css
     // bower:css
     // endbower
@@ -43,11 +41,11 @@ html
     #main-column
       #identity
         #icon
-          img(src="images/cycle.png")
+          img(src="images/cycle.png", alt="Cycle logo")
         h1#name= resume.identity.name
         #tagline
           = resume.identity.tagline
-          .sup &#0153
+          .sup &#8482;
         #subtag= resume.identity.subtag
         #links
           - for link in resume.identity.links
@@ -80,7 +78,7 @@ html
                 - if(job.website)
                   a.employer(href=job.website[0])
                     = job.employer
-                    img.external-link(src="images/external-link.png")
+                    img.external-link(src="images/external-link.png", alt="external link")
                 - else
                   .employer
                     = job.employer
@@ -105,7 +103,7 @@ html
               .employer= school.degree
             .description
               - if(school.name.trim() === "California State University Northridge")
-                img.logo(src= "images/csun_seal.png")
+                img.logo(src= "images/csun_seal.png", alt="CSUN Logo")
               .middot &middot;
               != school.description
       .section
@@ -114,9 +112,9 @@ html
         .contents
           .project-icons
             - for project in section.projects
-              a.project-icon(href=project.url, alt=project.title)
+              a.project-icon(href=project.url)
                 - var project_icon = "images/"+project.icon
-                img(src=project_icon)
+                img(src=project_icon, alt=project.title)
 
       .view-on-github
         a(href='https://github.com/itsgreggreg/Gregsume') View this project on github.

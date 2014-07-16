@@ -151,7 +151,7 @@ module.exports = function (grunt) {
             },
             serve: {
                 options: {
-                    pretty: false,
+                    pretty: true,
                     data: yaml.safeLoad(grunt.file.read('resume.yaml'))
                 },
                 files: [{
