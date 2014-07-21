@@ -13,6 +13,9 @@ resume:
       -
         title: flickr
         url: http://flickr.com/milkish
+      -
+        title: soundcloud
+        url: https://soundcloud.com/itsgreggreg
   sections:
     expertise:
       title: WHO
