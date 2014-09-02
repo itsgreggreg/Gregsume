@@ -63,7 +63,7 @@ body {
     .entry{
       margin-bottom: 40px;
     }
-    .section-title{
+    .title{
       padding-left: 20px;
       border-bottom: 2px dotted;
       color: $main-grey;
@@ -74,11 +74,14 @@ body {
     }
     .contents{
       margin: 0px $extend-margin;
-      .job-title{
+      .title{
         font-size: 1.5rem;
         color: $black;
         margin-bottom: -5px;
-        .position{
+        .employer-link-url, .school-link-url{
+          display: none;
+        }
+        .position, .major{
           display: inline;
         }
         .at{
@@ -88,13 +91,13 @@ body {
           margin-right: .5rem;
           margin-left: .5rem;
         }
-        .employer{
+        .employer, .school{
           display: inline;
           font-size: 1.4rem;
           color: $main-grey;
           text-decoration: none;
         }
-        a.employer{
+        a.employer, a.school{
           img.external-link{
             margin-left: 4px;
             margin-bottom: 4px;
@@ -161,6 +164,7 @@ body {
 #identity{
   text-align: center;
   margin-bottom: 30px;
+  #links-for-print, .employer-link-url{ display: none;}
   #icon{
     display: block;
     max-width: 85%;

@@ -24,7 +24,9 @@ html
     // endbuild
     link(rel='stylesheet', href='http://brick.a.ssl.fastly.net/Inconsolata:500')
     // build:css(.tmp) styles/main.css
-    link(rel='stylesheet', href='styles/main.css')
+    // link(rel='stylesheet', href='styles/main.css', media='screen')
+    // build:css(.tmp) styles/print.css
+    link(rel='stylesheet', href='styles/print.css', media='screen')
     // endbuild
     // build:js scripts/vendor/modernizr.js
     script(src='../bower_components/modernizr/modernizr.js')
@@ -39,87 +41,76 @@ html
       | to improve your experience.
     <![endif]-->
     #main-column
-      #avatar
-        img(src="images/greg1.jpg", alt="it's greggreg")
       #identity
         #icon
           img(src="images/cycle.png", alt="Cycle logo")
-        h1#name= resume.identity.name
-        #tagline
-          = resume.identity.tagline
-          .sup &#8482;
-        #subtag= resume.identity.subtag
-        #links
-          - for link in resume.identity.links
-            a(href= link.url)= link.title
-            .middot &middot;
+        #avatar
+          img(src="images/greg1.jpg", alt="it's greggreg")
+        #text-details
+          h1#name= resume.identity.name
+          #tagline
+            = resume.identity.tagline
+            .sup &#8482;
+          #subtag= resume.identity.subtag
+          #links
+            - for link in resume.identity.links
+              a(href= link.url)= link.title
+              .middot &middot;
+          ul#links-for-print
+            - for link in resume.identity.links
+              li= link.url
 
-      .section.expertise
-        - section = resume.sections.expertise
-        h2.section-title= section.title
-        .contents
-          .description!= section.description
-
-      .section.skills
-        - section = resume.sections.skills
-        h2.section-title= section.title
-        .contents.tags
-          - for tag in section.tags
-            .tag= tag
-
-      .section
-        - section = resume.sections.experience
-        h2.section-title= section.title
-        .contents
-          - for job in section.jobs
-            .entry
-              .job-title
-                .position= job.title
-                .at
-                  | at
-                - if(job.website)
-                  a.employer(href=job.website[0])
-                    = job.employer
-                    img.external-link(src="images/external-link.png", alt="external link")
-                - else
-                  .employer
-                    = job.employer
-              - if(job.dates && false)
-                .dates
-                  .middot &middot; 
-                  = job.dates
+      - for section in resume.sections
+        .section
+          h2.title= section.title
+          .contents
+            - if(section.description)
               .description
                 .middot &middot;
-                != job.description
+                != section.description
+
+            - if(section.tags)
               .tags
-                - for tag in job.tags
+                - for tag in section.tags
                   .tag= tag
-      .section
-        - section = resume.sections.education
-        h2.section-title= section.title
-        .contents
-          - for school in section.schools
-            .job-title
-              = school.name
-              br
-              .employer= school.degree
-            .description
-              - if(school.name.trim() === "California State University Northridge")
-                img.logo(src= "images/csun_seal.png", alt="CSUN Logo")
-              .middot &middot;
-              != school.description
-      .section
-        - section = resume.sections.extra
-        h2.section-title= section.title
-        .contents
-          .project-icons
-            - for project in section.projects
-              a.project-icon(href=project.url)
-                - var project_icon = "images/"+project.icon
-                img(src=project_icon, alt=project.title)
+
+            - if(section.entries)
+              - for entry in section.entries
+                - institution = (entry.employer || entry.university)
+                .entry
+                  .heading
+                    .title= (entry.title || entry.degree)
+                    .at at
+                    - if(entry.website)
+                      a.institution(href=entry.website)= institution
+                      img.external-link(src="images/external-link.png", alt="external link")
+                      span.institution-link-url= entry.website
+                    - else
+                      span.institution= institution
+                  - if(entry.description)
+                    .description
+                      - if(entry.logo)
+                        img.logo(src= entry.logo, alt= institution)
+                      .middot &middot;
+                      != entry.description
+                  - if(entry.tags)
+                    .tags
+                      - for tag in entry.tags
+                        .tag= tag
+
+            - if(section.examples)
+              .examples
+                - for example in section.examples
+                  a.example(href= example.url)
+                    img.icon(src=example.icon, alt= example.title)
+                    .title= example.title
+                    .url= example.url
 
       .view-on-github
         a(href='https://github.com/itsgreggreg/Gregsume') View this project on github.
+      .view-resume-online
+        | View this resume online at:
+        = " " + resume.url
 
     // build:js scripts/vendor.js
     // bower:js

@@ -1,0 +1,139 @@
+body, html{ 
+  width: 100%;
+  margin: 0;
+  font-size: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+*{box-sizing: border-box;}
+a{text-decoration: none; color: black}
+
+#identity{
+  width: 100%;
+  height: 200px;
+  #icon, #tagline, #subtag, #links {display: none;}
+
+  #text-details{
+    margin-left: 20px;
+    display: inline;
+    width: 45%;
+    height: 100%;
+    position: absolute;
+    margin-top: 20px;
+    left: 50%;
+    h1{
+      font-size: 3rem;
+      margin: 0;
+      margin-bottom: 15px;
+    }
+    #links-for-print{
+      margin-top: 15px;
+      padding: 0;
+      margin: 0;
+      margin-left: 20px;
+    }
+  }
+  #avatar{
+    display: inline;
+    position: absolute;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 45%;
+    height: 100%;
+    img{
+      position: absolute;
+      right: 20px;
+      top: 0;
+      max-width: 200px;
+      max-height: 200px;
+      border-radius: 1000px;
+      border: 4px solid #fff;
+      box-shadow: 0px 3px 4px rgba(0,0,0,.5);
+    }
+  }
+}
+
+#main-column{
+  .section{
+    clear: both;
+    margin-bottom: 2rem;
+    > .title{
+      padding-left: 20px;
+      border-bottom: 2px dotted;
+      color: #999;
+      padding-bottom: 0px;
+      letter-spacing: 0.2rem;
+      font-size: 1.2rem;
+      font-weight: normal;
+    }
+    .contents{
+      margin: 0 20px;
+      .description{
+        letter-spacing: .05rem;
+        margin-top: .5rem;
+        .middot{
+          display: inline-block;
+          margin-right: .5rem;
+        }
+        .logo{
+          float: right;
+          max-width: 100px;
+          margin-left: 13px;
+        }
+      }
+      .tags{
+        margin-top: .5rem;
+      }
+      .entry{
+        margin-bottom: 2rem;
+        > .heading{
+          .external-link{
+            display: none;
+          }
+          > .title, .institution, .at, .institution-link-url{
+            display: inline-block;
+          }
+          > .title{
+            font-size: 1.5rem;
+            font-weight: bold;
+          }
+          .institution{
+            font-size: 1.2rem;
+          }
+          .at{
+            margin-right: .5rem;
+            color: #555;
+          }
+          .institution-link-url{
+            color: #555;
+            margin-left: .5rem;
+          }
+        }
+      }
+      .example{
+        display: inline-block;
+        margin-right: 1rem;
+      }
+    }
+  }
+  .view-on-github{
+    display: none;
+  }
+  .view-resume-online{
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+.tag{
+  font-family: Courier;
+  display: inline-block;
+  background-color: #cfcfcf;
+  border-radius: 4px;
+  padding: 0.1rem .4rem;
+  margin-bottom: .5rem;
+  color: black;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-right: .5rem;
+}
