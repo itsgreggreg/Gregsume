@@ -181,5 +181,3 @@ resume:
           title: Slightly Cold
           url: http://slightlycold.com
           icon: images/slightly-cold-icon.png
-  notes:
-    This resume crafted in Vim, using Yeoman, Jade, Grunt, NPM, YAML, and Coffeescript. Yay for abstraction and automation.

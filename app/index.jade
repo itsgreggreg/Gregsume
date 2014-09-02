@@ -24,9 +24,9 @@ html
     // endbuild
     link(rel='stylesheet', href='http://brick.a.ssl.fastly.net/Inconsolata:500')
     // build:css(.tmp) styles/main.css
-    // link(rel='stylesheet', href='styles/main.css', media='screen')
+    link(rel='stylesheet', href='styles/main.css', media='screen')
     // build:css(.tmp) styles/print.css
-    link(rel='stylesheet', href='styles/print.css', media='screen')
+    // link(rel='stylesheet', href='styles/print.css', media='screen')
     // endbuild
     // build:js scripts/vendor/modernizr.js
     script(src='../bower_components/modernizr/modernizr.js')
@@ -42,63 +42,66 @@ html
     <![endif]-->
     #main-column
       #identity
+        - identity = resume.identity
         #icon
           img(src="images/cycle.png", alt="Cycle logo")
         #avatar
           img(src="images/greg1.jpg", alt="it's greggreg")
         #text-details
           h1#name= resume.identity.name
-          #tagline
-            = resume.identity.tagline
-            .sup &#8482;
-          #subtag= resume.identity.subtag
-          #links
-            - for link in resume.identity.links
-              a(href= link.url)= link.title
-              .middot &middot;
-          ul#links-for-print
-            - for link in resume.identity.links
-              li= link.url
+          if identity.tagline
+            #tagline= identity.tagline
+          if identity.subtag
+            #subtag= identity.subtag
+          if identity.links
+            #links
+              - for link in resume.identity.links
+                a(href= link.url)= link.title
+                .middot &middot;
+            ul#links-for-print
+              - for link in resume.identity.links
+                li= link.url
 
       - for section in resume.sections
         .section
           h2.title= section.title
           .contents
-            - if(section.description)
+            if section.description
               .description
                 .middot &middot;
                 != section.description
 
-            - if(section.tags)
+            if section.tags
               .tags
                 - for tag in section.tags
                   .tag= tag
 
-            - if(section.entries)
+            if section.entries
               - for entry in section.entries
                 - institution = (entry.employer || entry.university)
                 .entry
                   .heading
                     .title= (entry.title || entry.degree)
                     .at at
-                    - if(entry.website)
-                      a.institution(href=entry.website)= institution
-                      img.external-link(src="images/external-link.png", alt="external link")
+                    if entry.website
+                      a.institution(href=entry.website)
+                        = institution
+                        img.external-link(src="images/external-link.png", alt="external link")
                       span.institution-link-url= entry.website
                     - else
                       span.institution= institution
-                  - if(entry.description)
+                  if entry.description
                     .description
-                      - if(entry.logo)
+                      if entry.logo
                         img.logo(src= entry.logo, alt= institution)
                       .middot &middot;
                       != entry.description
-                  - if(entry.tags)
+                  if entry.tags
                     .tags
                       - for tag in entry.tags
                         .tag= tag
 
-            - if(section.examples)
+            if section.examples
               .examples
                 - for example in section.examples
                   a.example(href= example.url)
