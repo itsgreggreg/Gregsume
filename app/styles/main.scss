@@ -144,11 +144,25 @@ body {
   }
 }
 
+#avatar{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  img{
+    width: 100%;
+    max-width: 150px;
+    max-height: 100px;
+    border-radius: 10000px;
+    border: 3px solid white;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
+  }
+}
+
 #identity{
   text-align: center;
   margin-bottom: 30px;
   #icon{
-    display: inline-block;
+    display: block;
     max-width: 85%;
     // padding-right: 45px;
     img{

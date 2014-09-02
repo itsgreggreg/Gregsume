@@ -1,6 +1,6 @@
 resume:
   identity:
-    name: Greg Baraghimian
+    name: Greg Bara
     tagline: I Program Computers.
     subtag: And do some other stuff too.
     links:
@@ -132,7 +132,7 @@ resume:
           dates: October 2009 - November 2010
           description: I was brought into Lime Wire to write an analytics dashboard and set of visualizations for the massive amount
             of data they were bringing in. I wrote an Adobe Flex based application capable of loading in configurable analytics modules
-            that tied in with the companies identity server to allow employees to securely log in and save dashboard configurations. When Lime Wire
+            that tied in with the company's identity server to allow employees to securely log in and save dashboard configurations. When Lime Wire
             kickstarted work on what would be an online music purchasing and streaming service, I was called upon to construct prototypes
             in Adobe Air as well as QT and was put on the fledgling team of core developers for the new project. We were tasked with creating
             the brand new music service's minimum viable product and for this project I was both scrum master and lead QT developer.
@@ -162,7 +162,7 @@ resume:
           title: Junior Developer
           description:
             I was brought onto Our Stage as a Junior Developer to build various components in Actionscript 3.
-            I build a real time DJ multicasting app, updated and maintained their chat application, and contributed
+            I built a real time DJ multicasting app, updated and maintained their chat application, and contributed
             various features and bug fixes to the main webapp in Ruby. I also bough my first two wheeled motor vehicle from a coworker there.
             It was a red &#39;78 Puch Maxi.
           dates: April 2008 - October 2008
