@@ -5,6 +5,13 @@ getParameterByName = (name) ->
     results = regex.exec(location.search)
     if results == null then "" else decodeURIComponent(results[1].replace(/\+/g, " "))
 
+$('#avatar').on 'click', ->
+  $('#avatar-light-box').show()
+  false
+
+$('body').on 'click', ->
+  $('#avatar-light-box').hide()
+
 $ ->
   # Inserts a phone number if one has been specified in the query param
   # Use %2b for '+'
