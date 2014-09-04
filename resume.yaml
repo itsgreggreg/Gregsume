@@ -4,6 +4,8 @@ resume:
     name: Greg Bara
     tagline: I Program Computers.
     subtag: And do some other stuff too.
+    avatar: images/greg1.jpg
+    icon: images/cycle.png
     links:
       -
         title: github

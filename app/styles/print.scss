@@ -1,6 +1,7 @@
 body, html{ 
   width: 100%;
-  margin: 0;
+  min-width: 900px;
+  margin: 20px 0;
   font-size: 100%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -8,42 +9,44 @@ body, html{
 a{text-decoration: none; color: black}
 
 #identity{
-  width: 100%;
-  height: 200px;
-  #icon, #tagline, #subtag, #links {display: none;}
+  #icon, #links {display: none;}
+  margin-bottom: 2rem;
 
   #text-details{
-    margin-left: 20px;
-    display: inline;
-    width: 45%;
-    height: 100%;
-    position: absolute;
-    margin-top: 20px;
-    left: 50%;
-    h1{
+    display: inline-block;
+    width: 49.5%;
+    padding-left: 1em;
+    #name{
       font-size: 3rem;
       margin: 0;
-      margin-bottom: 15px;
+    }
+    #tagline, #subtag{
+      margin-left: .5rem
+    }
+    #tagline{
+      font-size: 1.6rem;
+    }
+    #subtag{
+      font-size: 1rem;
+    }
+    #contact{
+      margin: .5rem 0;
+      #phone{
+        margin-left: 1rem;
+      }
     }
     #links-for-print{
-      margin-top: 15px;
       padding: 0;
-      margin: 0;
-      margin-left: 20px;
+      margin: 0 0 0 1.5rem;
     }
   }
   #avatar{
-    display: inline;
-    position: absolute;
+    display: inline-block;
     text-align: right;
-    margin-right: 20px;
-    margin-top: 20px;
-    width: 45%;
-    height: 100%;
+    vertical-align: top;
+    padding-right: 1em;
+    width: 49.5%;
     img{
-      position: absolute;
-      right: 20px;
-      top: 0;
       max-width: 200px;
       max-height: 200px;
       border-radius: 1000px;
@@ -121,7 +124,6 @@ a{text-decoration: none; color: black}
   }
   .view-resume-online{
     text-align: center;
-    padding-bottom: 20px;
   }
 }
 

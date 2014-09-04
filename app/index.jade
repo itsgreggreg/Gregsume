@@ -26,7 +26,7 @@ html
     // build:css(.tmp) styles/main.css
     link(rel='stylesheet', href='styles/main.css', media='screen')
     // build:css(.tmp) styles/print.css
-    // link(rel='stylesheet', href='styles/print.css', media='screen')
+    link(rel='stylesheet', href='styles/print.css', media='print')
     // endbuild
     // build:js scripts/vendor/modernizr.js
     script(src='../bower_components/modernizr/modernizr.js')
@@ -44,15 +44,18 @@ html
       #identity
         - identity = resume.identity
         #icon
-          img(src="images/cycle.png", alt="Cycle logo")
+          img(src= identity.icon, alt="Icon")
         #avatar
-          img(src="images/greg1.jpg", alt="it's greggreg")
+          a(href="")
+            img(src= identity.avatar, alt= identity.name)
         #text-details
           h1#name= resume.identity.name
           if identity.tagline
             #tagline= identity.tagline
           if identity.subtag
             #subtag= identity.subtag
+          #contact
+            #phone= identity.phone
           if identity.links
             #links
               - for link in resume.identity.links
