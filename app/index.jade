@@ -3,21 +3,31 @@ html
   head
     meta(charset='utf-8')
     title Gregsumé
+    //                                                      
+    // ,ggg,        gg                                      
+    // dP""Y8b       88           ,dPYb, ,dPYb,             
+    // Yb, `88       88           IP'`Yb IP'`Yb             
+    //  `"  88       88           I8  8I I8  8I             
+    //      88aaaaaaa88           I8  8' I8  8'             
+    //      88"""""""88   ,ggg,   I8 dP  I8 dP    ,ggggg,   
+    //      88       88  i8" "8i  I8dP   I8dP    dP"  "Y8ggg
+    //      88       88  I8, ,8I  I8P    I8P    i8'    ,8I  
+    //      88       Y8, `YbadP' ,d8b,_ ,d8b,_ ,d8,   ,d8'  
+    //      88       `Y8888P"Y8888P'"Y888P'"Y88P"Y8888P"    
+    //                                                      
     meta(name='description', content='')
-    // meta(name='viewport', content='width=device-width')
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel='shortcut icon', href='favicon.ico')
-    // Place favicon.ico and apple-touch-icon.png in the root directory
     // build:css styles/vendor.css
     // bower:css
     // endbower
     // endbuild
     link(rel='stylesheet', href='http://brick.a.ssl.fastly.net/Inconsolata:500')
     // build:css(.tmp) styles/main.css
-    link(rel='stylesheet', href='styles/main.css')
+    link(rel='stylesheet', href='styles/main.css', media='screen')
     // endbuild
-    // build:js scripts/vendor/modernizr.js
-    script(src='../bower_components/modernizr/modernizr.js')
+    // build:css(.tmp) styles/print.css
+    link(rel='stylesheet', href='styles/print.css', media='print')
     // endbuild
   body
     <!--[if lt IE 10]>
@@ -28,76 +38,89 @@ html
       a(href='http://browsehappy.com/') upgrade your browser 
       | to improve your experience.
     <![endif]-->
+    - identity = resume.identity
+    if identity.avatar
+      #avatar-light-box
+        img(src= identity.avatar, alt= identity.name)
     #main-column
       #identity
-        h1#name= resume.identity.name
-        #tagline
-          = resume.identity.tagline
-        #subtag= resume.identity.subtag
-        #links
-          - for link in resume.identity.links
-            a(href= link.url)= link.title
-            .middot &middot;
+        #icon
+          img(src= identity.icon, alt="Icon")
+        #avatar
+          a(href="")
+            img(src= identity.avatar, alt= identity.name)
+        #text-details
+          h1#name= resume.identity.name
+          if identity.tagline
+            #tagline= identity.tagline
+          if identity.subtag
+            #subtag= identity.subtag
+          #contact
+            #phone= identity.phone
+          if identity.links
+            #links
+              - for link in resume.identity.links
+                a(href= link.url)= link.title
+                .middot &middot;
+            ul#links-for-print
+              - for link in resume.identity.links
+                li= link.url
 
-      .section.expertise
-        - section = resume.sections.expertise
-        h2.section-title= section.title
-        .contents
-          .description!= section.description
-
-      .section.skills
-        - section = resume.sections.skills
-        h2.section-title= section.title
-        .contents.tags
-          - for tag in section.tags
-            .tag= tag
-
-      .section
-        - section = resume.sections.experience
-        h2.section-title= section.title
-        .contents
-          - for job in section.jobs
-            .entry
-              .job-title
-                .position= job.title
-                .at
-                  | at
-                - if(job.website)
-                  a.employer(href=job.website[0])
-                    = job.employer
-                    img.external-link(src="images/external-link.png", alt="external link")
-                - else
-                  .employer
-                    = job.employer
-              - if(job.dates && false)
-                .dates
-                  .middot &middot; 
-                  = job.dates
+      - for section in resume.sections
+        .section
+          h2.title= section.title
+          .contents
+            if section.description
               .description
                 .middot &middot;
-                != job.description
+                != section.description
+
+            if section.tags
               .tags
-                - for tag in job.tags
+                - for tag in section.tags
                   .tag= tag
-      .section
-        - section = resume.sections.education
-        h2.section-title= section.title
-        .contents
-          - for school in section.schools
-            .job-title
-              = school.name
-              br
-              .employer= school.degree
-            .description
-              .middot &middot;
-              != school.description
+
+            if section.entries
+              - for entry in section.entries
+                - institution = (entry.employer || entry.university)
+                .entry
+                  .heading
+                    .title= (entry.title || entry.degree)
+                    .at at
+                    if entry.website
+                      a.institution(href=entry.website)
+                        = institution
+                        img.external-link(src="images/external-link.png", alt="external link")
+                      span.institution-link-url= entry.website
+                    - else
+                      span.institution= institution
+                  if entry.description
+                    .description
+                      if entry.logo
+                        img.logo(src= entry.logo, alt= institution)
+                      .middot &middot;
+                      != entry.description
+                  if entry.tags
+                    .tags
+                      - for tag in entry.tags
+                        .tag= tag
+
+            if section.examples
+              .examples
+                - for example in section.examples
+                  a.example(href= example.url)
+                    img.icon(src=example.icon, alt= example.title)
+                    .title= example.title
+                    .url= example.url
 
       .view-on-github
         a(href='https://github.com/itsgreggreg/Gregsume') View this project on github.
+      .view-resume-online
+        | View this resume online at:
+        = " " + resume.url
 
     // build:js scripts/vendor.js
     // bower:js
-    script(src='../bower_components/jquery/dist/jquery.js')
     // endbower
     // endbuild
     // build:js({app,.tmp}) scripts/main.js

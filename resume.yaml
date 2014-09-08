@@ -1,45 +1,88 @@
 resume:
+  url: http://github.com/itsgreggreg/Gregsume
   identity:
     name: Your Name Here
-    tagline: Why You're Awesome
+    tagline: A tagline about you
+    subtag: Maybe another, smaller tagline
+    avatar: images/avatar.jpg
+    icon: images/icon.png
     links:
       -
-        title: github
-        url: http://github.com/
+        title: some
+        url: https://github.com/itsgreggreg/Gregsume
       -
-        title: stackoverflow
-        url: http://stackoverflow.com/
+        title: relavant
+        url: https://github.com/itsgreggreg/Gregsume
+      -
+        title: links
+        url: https://github.com/itsgreggreg/Gregsume
   sections:
     expertise:
       title: WHO
       description:
-        The Super awesome things that make you so super awesome.
+        Here you can put a witty description about youself explaining all the cool things 
+        that you do with your life in and outside of work. Try printing this resume either to real paper if you can find some or to pdf to see the print style sheet in action. Resize the browser window or view it on your phone for responsive web design awesomeness.
 
     skills:
       title: SKILLS
       tags:
-        - Scrumtastic
-        - HTML5
-        - Mobile Ready
+        - A
+        - List
+        - Of
+        - All
+        - The
+        - Things
+        - You're
+        - Good
+        - At
 
 
     experience:
       title: EXPERIENCE
-      jobs:
+      entries:
         -
-          employer: An Employer
-          website:
-            - http://alpha-mouse.com
-          title: Your Job Title
-          description: What you did for this company.
+          employer: Radical Corp
+          website: https://github.com/itsgreggreg/Gregsume
+          title: Chief Radical Oficer
+          description: A description of your awesomeness at this particular position. Lorem Ipsum and some other stuff meant to fill space.
           tags:
-            - Ruby
-            - Javascript
-            - HTML
+            - Awesome
+            - Super Awesome
+            - More
+            - Tags
+            - Yay
+        -
+          employer: Awesome Gmbh
+          website: https://github.com/itsgreggreg/Gregsume
+          title: Intern of Awesome
+          description: A description of your awesomeness at this particular position. Lorem Ipsum and some other stuff meant to fill space.
+          tags:
+            - Awesome
+            - Super Awesome
+            - More
+            - Tags
+            - Yay
+
+
+
     education:
       title: FORMAL EDUCATION
-      schools:
+      entries:
         -
-          name: School Name
-          degree: Degree name
-          description: Description of your time at said school
+          university: The International School of Hard Knocks
+          degree: B.S. in Street Smarts
+          logo: images/csun_seal.png
+          description:
+            You're totally cool education history. Descriptions on either jobs or schools can have pictures! Just add a "logo" field to the entry and it'll show up in the description just like it does here! Yay for more filler text.
+
+    extra:
+      title: EXTRA
+      examples:
+        -
+          title: Some Project
+          url: https://github.com/itsgreggreg/Gregsume
+          icon: images/project1.png
+        -
+          title: Some Other Project
+          url: https://github.com/itsgreggreg/Gregsume
+          icon: images/project2.png
