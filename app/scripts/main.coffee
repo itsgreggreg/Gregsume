@@ -15,5 +15,8 @@ $('body').on 'click', ->
 $ ->
   # Inserts a phone number if one has been specified in the query param
   # Use %2b for '+'
-  if phone = getParameterByName("phone")
-    $("#phone").html phone
+  if phone = getParameterByName('phone')
+    $('#phone').html phone
+  # Same for email address, %40 for '@'
+  if email = getParameterByName('email')
+    $('#email').html email
