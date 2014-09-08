@@ -37,7 +37,7 @@ module.exports = function (grunt) {
             },
             jade: {
                 files: ['<%= config.app %>/{,*/}*.jade', './resume.yaml'],
-                tasks: ['jade:serve']
+                tasks: ['jade:serve', 'bowerInstall']
             },
             js: {
                 files: ['<%= config.app %>/scripts/{,*/}*.js'],
