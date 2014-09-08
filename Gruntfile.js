@@ -252,9 +252,11 @@ module.exports = function (grunt) {
 
         // Automatically inject Bower components into the HTML file
         bowerInstall: {
-            app: {
-                src: ['<%= config.app %>/index.html'],
-                exclude: ['bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js']
+            dist: {
+              src: ['<%= config.dist %>/index.html'],
+            },
+            serve: {
+              src: ['<%= config.tmp %>/index.html'],
             },
             sass: {
                 src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}']
@@ -283,7 +285,7 @@ module.exports = function (grunt) {
             options: {
                 dest: '<%= config.dist %>'
             },
-            html: '.tmp/index.html'
+            html: '<%= config.dist %>/index.html'
         },
 
         // Performs rewrites based on rev and the useminPrepare configuration
@@ -402,23 +404,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Generates a custom Modernizr build that includes only the tests you
-        // reference in your app
-        modernizr: {
-            dist: {
-                devFile: 'bower_components/modernizr/modernizr.js',
-                outputFile: '<%= config.dist %>/scripts/vendor/modernizr.js',
-                files: {
-                    src: [
-                        '<%= config.dist %>/scripts/{,*/}*.js',
-                        '<%= config.dist %>/styles/{,*/}*.css',
-                        '!<%= config.dist %>/scripts/vendor/*'
-                    ]
-                },
-                uglify: true
-            }
-        },
-
         // Run some tasks in parallel to speed up build process
         concurrent: {
             server: [
@@ -449,6 +434,7 @@ module.exports = function (grunt) {
             'autoprefixer',
             'connect:livereload',
             'jade:serve',
+            'bowerInstall:serve',
             'coffee:serve',
             'watch'
         ]);
@@ -476,21 +462,23 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        'useminPrepare',
-        // 'concurrent:dist',
+        'jade:dist',
+        'bowerInstall:dist',
+        'coffee:dist',
         'sass:dist',
+        'useminPrepare',
+        // 'concurrent:dist', commented out because it's too confusing to have to keep 
+        // refering to the list of concurrent tasks and build takes < 3s. Uncomment 
+        // if build gets too slow.
         'copy:styles',
         'imagemin',
         'svgmin',
         'autoprefixer',
-        'jade:dist',
-        'coffee:dist',
-        // 'concat',
-        // 'cssmin',
-        // 'uglify',
         'copy:dist',
         'copy:dist_styles',
-        'modernizr',
+        'concat:generated',
+        'cssmin:generated',
+        'uglify:generated',
         'rev',
         'usemin',
         'htmlmin'
